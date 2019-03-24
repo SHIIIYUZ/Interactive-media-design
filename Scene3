@@ -1,0 +1,398 @@
+import flash.events.MouseEvent;
+import flash.media.Sound;
+
+
+var areBgmPlaying:Boolean = true;
+var music2:Sound = new Sound (new URLRequest("introbgm.mp3"));
+var sc2:SoundChannel = music2.play();
+var arePlaying2:Boolean = true;
+
+home_btn.addEventListener(MouseEvent.CLICK,home);
+home_btn.addEventListener(MouseEvent.MOUSE_OVER,homeBig,false,0,true);
+home_btn.addEventListener(MouseEvent.MOUSE_OUT,homeSmall,false,0,true);
+
+voice_btn.addEventListener(MouseEvent.CLICK, stopVoice);
+voice_no_btn.addEventListener(MouseEvent.CLICK, playVoice);
+voice_no_btn.visible=false;
+voice_btn.visible=true;
+var areSpeaking:Boolean = true;
+
+sound_btn.addEventListener(MouseEvent.CLICK, stopBgm);
+sound_no_btn.addEventListener(MouseEvent.CLICK, playBgm);
+sound_btn.visible=true;
+sound_no_btn.visible=false;
+
+function home(event:MouseEvent):void{
+	vc.stop();
+	MovieClip(this.root).gotoAndPlay(1, "场景 1");
+	sc2.stop();
+}
+
+function homeBig(event:MouseEvent):void{
+	home_btn.height=150;
+	home_btn.width=150;
+}
+
+function homeSmall(event:MouseEvent):void{
+	home_btn.height=100;
+	home_btn.width=100;
+}
+
+
+function stopBgm(e:MouseEvent):void{
+	if(areBgmPlaying==true){
+		sc2.stop();
+		sound_btn.visible=false;
+		sound_no_btn.visible=true;
+		areBgmPlaying = false;
+		
+		}
+	else{
+	sc2.stop();
+	areBgmPlaying = false;
+		}
+	}
+
+function playBgm(e:MouseEvent):void{
+	if(areBgmPlaying==false){
+		sc2 = music2.play();
+		sound_btn.visible=true;
+		sound_no_btn.visible=false;
+		areBgmPlaying = true;
+		}
+	else{
+	sc2.stop();
+	areBgmPlaying =false;
+		}
+	}
+	
+import flash.media.Sound;
+
+var voice1:Sound = new v1() as Sound;
+var voice2:Sound = new v2() as Sound;
+var voice3:Sound = new v3() as Sound;
+var voice4:Sound = new v4() as Sound;
+var voice5:Sound = new v5() as Sound;
+var voice6:Sound = new v6() as Sound;
+var voice7:Sound = new v7() as Sound;
+var voice8:Sound = new v8() as Sound;
+var voice9:Sound = new v9() as Sound;
+var voice10:Sound = new v10() as Sound;
+var voice11:Sound = new v11() as Sound;
+var voice12:Sound = new v12() as Sound;
+var voice13:Sound = new v13() as Sound;
+var voice14:Sound = new v14() as Sound;
+var voice15:Sound = new v15() as Sound;
+var voice16:Sound = new v16() as Sound;
+
+
+
+function stopVoice(e:MouseEvent):void{
+	if(areSpeaking==true){
+		vc.stop();
+		voice_btn.visible=false;
+		voice_no_btn.visible=true;
+		areSpeaking = false;
+		soundTF.volume=2
+		sc2.soundTransform=soundTF
+	}
+	}
+var soundTF:SoundTransform=new SoundTransform();
+function playVoice(e:MouseEvent):void{
+	if(areSpeaking==false){
+		soundTF.volume=0.5
+		sc2.soundTransform=soundTF
+		voice_btn.visible=true;
+		voice_no_btn.visible=false;
+		areSpeaking = true;
+		}
+	}
+
+///////////////////////////////////////////////////////////////////////////////////
+
+function buttHovered(evt:Event):void {
+	overSound2.play();
+	butt.alpha=0.2;
+}
+function buttOut(evt:Event):void {
+	butt.alpha=1;
+}
+
+function buttClicked(evt:Event):void {
+	clickSound2.play();
+ play();
+}
+butt.addEventListener(MouseEvent.CLICK, buttClicked); 
+butt.addEventListener(MouseEvent.MOUSE_OVER, buttHovered); 
+butt.addEventListener(MouseEvent.MOUSE_OUT,buttOut);
+
+if(areSpeaking==true){
+	vc = voice1.play();
+	}
+/////////////////////////////////////////////////////////////////////////////////
+import flash.events.MouseEvent;
+
+var overSound2:Sound = new chg_over() as Sound;
+var clickSound2:Sound = new chg_click() as Sound;
+
+x1.visible=false;
+butt1.addEventListener(MouseEvent.MOUSE_DOWN,onDown);
+butt1.addEventListener(MouseEvent.MOUSE_OVER,onShow);
+butt1.addEventListener(MouseEvent.MOUSE_OUT,onHide);
+
+function onHide(e:MouseEvent):void{
+	x1.visible=false;
+}
+function onShow(e:MouseEvent):void{
+	overSound2.play();
+     x1.visible=true;
+}
+function onDown(e:MouseEvent):void{
+	clickSound2.play();
+	vc.stop();
+	gotoAndPlay(25);
+}
+butt2.addEventListener(MouseEvent.MOUSE_OVER,onShow1);
+butt2.addEventListener(MouseEvent.MOUSE_OUT,onHide1);
+x2.visible=false;
+function onHide1(e:MouseEvent):void{
+	x2.visible=false;
+}
+function onShow1(e:MouseEvent):void{
+	overSound2.play();
+x2.visible=true;
+}
+butt2.addEventListener(MouseEvent.MOUSE_DOWN,onDown1);
+function onDown1(e:MouseEvent):void{
+	clickSound2.play();
+gotoAndPlay(45);
+}
+
+butt3.addEventListener(MouseEvent.MOUSE_OVER,onShow2);
+butt3.addEventListener(MouseEvent.MOUSE_OUT,onHide2);
+x3.visible=false;
+function onHide2(e:MouseEvent):void{
+	x3.visible=false;
+}
+function onShow2(e:MouseEvent):void{
+	overSound2.play();
+x3.visible=true;
+}
+butt3.addEventListener(MouseEvent.MOUSE_DOWN,onDown2);
+function onDown2(e:MouseEvent):void{
+	clickSound2.play();
+gotoAndPlay(65);
+}
+butt4.addEventListener(MouseEvent.MOUSE_OVER,onShow3);
+butt4.addEventListener(MouseEvent.MOUSE_OUT,onHide3);
+x4.visible=false;
+function onHide3(e:MouseEvent):void{
+	x4.visible=false;
+}
+function onShow3(e:MouseEvent):void{
+	overSound2.play();
+x4.visible=true;
+}
+butt4.addEventListener(MouseEvent.MOUSE_DOWN,onDown3);
+function onDown3(e:MouseEvent):void{
+	clickSound2.play();
+gotoAndPlay(85);
+}
+butt5.addEventListener(MouseEvent.MOUSE_OVER,onShow4);
+butt5.addEventListener(MouseEvent.MOUSE_OUT,onHide4);
+x5.visible=false;
+function onHide4(e:MouseEvent):void{
+	x5.visible=false;
+}
+function onShow4(e:MouseEvent):void{
+	overSound2.play();
+    x5.visible=true;
+}
+butt5.addEventListener(MouseEvent.MOUSE_DOWN,onDown4);
+function onDown4(e:MouseEvent):void{
+	clickSound2.play();
+gotoAndPlay(105);
+}
+butt6.addEventListener(MouseEvent.MOUSE_OVER,onShow5);
+butt6.addEventListener(MouseEvent.MOUSE_OUT,onHide5);
+x6.visible=false;
+function onHide5(e:MouseEvent):void{
+	x6.visible=false;
+}
+function onShow5(e:MouseEvent):void{
+	overSound2.play();
+    x6.visible=true;
+}
+butt6.addEventListener(MouseEvent.MOUSE_DOWN,onDown5);
+function onDown5(e:MouseEvent):void{
+	clickSound2.play();
+gotoAndPlay(125);
+}
+butt7.addEventListener(MouseEvent.MOUSE_OVER,onShow6);
+butt7.addEventListener(MouseEvent.MOUSE_OUT,onHide6);
+x7.visible=false;
+function onHide6(e:MouseEvent):void{
+	x7.visible=false;
+}
+function onShow6(e:MouseEvent):void{
+	overSound2.play();
+    x7.visible=true;
+}
+butt7.addEventListener(MouseEvent.MOUSE_DOWN,onDown6);
+function onDown6(e:MouseEvent):void{
+	clickSound2.play();
+gotoAndPlay(145);
+}
+butt8.addEventListener(MouseEvent.MOUSE_OVER,onShow7);
+butt8.addEventListener(MouseEvent.MOUSE_OUT,onHide7);
+x8.visible=false;
+function onHide7(e:MouseEvent):void{
+	x8.visible=false;
+}
+function onShow7(e:MouseEvent):void{
+	overSound2.play();
+    x8.visible=true;
+}
+butt8.addEventListener(MouseEvent.MOUSE_DOWN,onDown7);
+function onDown7(e:MouseEvent):void{
+	clickSound2.play();
+gotoAndPlay(165);
+}
+butt9.addEventListener(MouseEvent.MOUSE_OVER,onShow8);
+butt9.addEventListener(MouseEvent.MOUSE_OUT,onHide8);
+x9.visible=false;
+function onHide8(e:MouseEvent):void{
+	overSound2.play();
+	x9.visible=false;
+}
+function onShow8(e:MouseEvent):void{
+    x9.visible=true;
+}
+butt9.addEventListener(MouseEvent.MOUSE_DOWN,onDown8);
+function onDown8(e:MouseEvent):void{
+	clickSound2.play();
+gotoAndPlay(185);
+}
+butt10.addEventListener(MouseEvent.MOUSE_OVER,onShow9);
+butt10.addEventListener(MouseEvent.MOUSE_OUT,onHide9);
+x10.visible=false;
+function onHide9(e:MouseEvent):void{
+	x10.visible=false;
+}
+function onShow9(e:MouseEvent):void{
+	overSound2.play();
+    x10.visible=true;
+}
+butt10.addEventListener(MouseEvent.MOUSE_DOWN,onDown9);
+function onDown9(e:MouseEvent):void{
+	clickSound2.play();
+gotoAndPlay(205);
+}
+butt11.addEventListener(MouseEvent.MOUSE_OVER,onShow10);
+butt11.addEventListener(MouseEvent.MOUSE_OUT,onHide10);
+x11.visible=false;
+function onHide10(e:MouseEvent):void{
+	x11.visible=false;
+}
+function onShow10(e:MouseEvent):void{
+	overSound2.play();
+    x11.visible=true;
+}
+butt11.addEventListener(MouseEvent.MOUSE_DOWN,onDown10);
+function onDown10(e:MouseEvent):void{
+	clickSound2.play();
+gotoAndPlay(225);
+}
+butt12.addEventListener(MouseEvent.MOUSE_OVER,onShow11);
+butt12.addEventListener(MouseEvent.MOUSE_OUT,onHide11);
+x12.visible=false;
+function onHide11(e:MouseEvent):void{
+	x12.visible=false;
+}
+function onShow11(e:MouseEvent):void{
+	overSound2.play();
+    x12.visible=true;
+}
+butt12.addEventListener(MouseEvent.MOUSE_DOWN,onDown11);
+function onDown11(e:MouseEvent):void{
+	clickSound2.play();
+gotoAndPlay(245);
+}
+butt13.addEventListener(MouseEvent.MOUSE_OVER,onShow12);
+butt13.addEventListener(MouseEvent.MOUSE_OUT,onHide12);
+x13.visible=false;
+function onHide12(e:MouseEvent):void{
+	x13.visible=false;
+}
+function onShow12(e:MouseEvent):void{
+	overSound2.play();
+    x13.visible=true;
+}
+butt13.addEventListener(MouseEvent.MOUSE_DOWN,onDown12);
+function onDown12(e:MouseEvent):void{
+	clickSound2.play();
+gotoAndPlay(265);
+}
+butt14.addEventListener(MouseEvent.MOUSE_OVER,onShow13);
+butt14.addEventListener(MouseEvent.MOUSE_OUT,onHide13);
+x14.visible=false;
+function onHide13(e:MouseEvent):void{
+	x14.visible=false;
+}
+function onShow13(e:MouseEvent):void{
+	overSound2.play();
+    x14.visible=true;
+}
+butt14.addEventListener(MouseEvent.MOUSE_DOWN,onDown13);
+function onDown13(e:MouseEvent):void{
+	clickSound2.play();
+gotoAndPlay(285);
+}
+butt15.addEventListener(MouseEvent.MOUSE_OVER,onShow14);
+butt15.addEventListener(MouseEvent.MOUSE_OUT,onHide14);
+x15.visible=false;
+function onHide14(e:MouseEvent):void{
+	x15.visible=false;
+}
+function onShow14(e:MouseEvent):void{
+	overSound2.play();
+    x15.visible=true;
+}
+butt15.addEventListener(MouseEvent.MOUSE_DOWN,onDown14);
+function onDown14(e:MouseEvent):void{
+	clickSound2.play();
+gotoAndPlay(305);
+}
+butt16.addEventListener(MouseEvent.MOUSE_OVER,onShow15);
+butt16.addEventListener(MouseEvent.MOUSE_OUT,onHide15);
+x16.visible=false;
+function onHide15(e:MouseEvent):void{
+	x16.visible=false;
+}
+function onShow15(e:MouseEvent):void{
+	overSound2.play();
+    x16.visible=true;
+}
+butt16.addEventListener(MouseEvent.MOUSE_DOWN,onDown15);
+function onDown15(e:MouseEvent):void{
+	clickSound2.play();
+gotoAndPlay(325);
+}
+butt17.addEventListener(MouseEvent.MOUSE_OVER,onShow16);
+butt17.addEventListener(MouseEvent.MOUSE_OUT,onHide16);
+x17.visible=false;
+function onHide16(e:MouseEvent):void{
+	x17.visible=false;
+}
+function onShow16(e:MouseEvent):void{
+	overSound2.play();
+    x17.visible=true;
+}
+butt17.addEventListener(MouseEvent.MOUSE_DOWN,onDown16);
+function onDown16(e:MouseEvent):void{
+	clickSound2.play();
+gotoAndPlay(345);
+}
+
+
+
