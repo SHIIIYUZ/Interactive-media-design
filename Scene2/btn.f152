@@ -1,0 +1,57 @@
+gou3.visible=false;
+cha1A.visible=false;
+cha1B.visible=false;
+cha1D.visible=false;
+WText3.visible=false;
+RText3.visible=false;
+var On3:Boolean= false;
+stop();
+
+btn3A.addEventListener(MouseEvent.CLICK,btn3AClick);
+btn3B.addEventListener(MouseEvent.CLICK,btn3BClick);
+btn3C.addEventListener(MouseEvent.CLICK,btn3CClick);
+btn3D.addEventListener(MouseEvent.CLICK,btn3DClick);
+jiantou3.addEventListener(MouseEvent.CLICK,jiantou3Click);
+
+function btn3AClick(event:MouseEvent):void{
+	
+	if(On3==false){
+	gou3.visible=true;
+	WText3.visible=true;
+	On3=true;
+	cha1A.visible=true;
+	}
+}
+
+function btn3BClick(event:MouseEvent):void{
+	if(On3==false){
+	gou3.visible=true;
+	WText3.visible=true;
+	On3=true;
+	cha1B.visible=true;
+	}
+}
+
+function btn3CClick(event:MouseEvent):void{
+
+	if(On3==false){
+	gou3.visible=true;
+	RText3.visible=true;
+	m++;
+	On3=true;
+	}
+}
+
+function btn3DClick(event:MouseEvent):void{
+	if(On3==false){
+	gou3.visible=true;
+	WText3.visible=true;
+	On3=true;
+	cha1D.visible=true;
+	}
+}
+
+function jiantou3Click(event:MouseEvent):void{
+	if(On3==true)
+	play();
+}
