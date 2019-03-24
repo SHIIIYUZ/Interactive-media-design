@@ -1,0 +1,6 @@
+stop();
+info.addEventListener(MouseEvent.CLICK,infoClick);
+
+function infoClick(event:MouseEvent):void{
+	play();
+}
