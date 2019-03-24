@@ -1,0 +1,368 @@
+stop();
+jian0.addEventListener(MouseEvent.CLICK,jian0Click);
+jian0.addEventListener(MouseEvent.MOUSE_OVER,jian0Over);
+jian0.addEventListener(MouseEvent.MOUSE_OUT,jian0Out);
+
+function jian0Click(event:MouseEvent):void{
+	play();
+	clickSound.play();
+}
+
+function jian0Over(event:MouseEvent):void{
+	jian0.height=180;
+	jian0.width=180;
+	overSound.play();
+}
+
+function jian0Out(event:MouseEvent):void{
+	jian0.height=150;
+	jian0.width=150;
+}
+//////////////////////////////////////////////////////////////////////
+var knifeOn:Boolean= false;
+knifeText.visible=false;
+
+knife.addEventListener(MouseEvent.CLICK,knifepointClick);
+knife.addEventListener(MouseEvent.MOUSE_OVER,knifepointOver);
+knife.addEventListener(MouseEvent.MOUSE_OUT,knifepointOut);
+if(knife.x==257.30){
+	knifeOn=false;
+	
+}
+else if(knife.x==763.40){
+	knifeOn=true;
+}
+
+if(knifeOn==true){
+	knifeText.visible=true;
+}
+
+handOn=caneOn||knifeOn;
+
+function knifepointClick(event:MouseEvent):void{
+	
+	if((handOn==false)&&(knifeOn==false)){
+		knife.width=350;
+		knife.height=350;
+		knife.x=763.40;
+		knife.y=580.05;
+		manyStars.play();
+		knifeText.visible=true;
+		knifeOn=true;
+		putSound.play();
+	}
+	else{
+		knife.x=257.30;
+		knife.y=744.05;
+		knife.width=350;
+		knife.height=350;
+		knifeText.visible=false;
+		knifeOn=false;
+		dropSound.play();
+	}
+}
+
+function knifepointOver(event:MouseEvent):void{
+	if(knifeOn==false){
+		knife.width=400;
+		knife.height=400;
+		overSound.play();
+	}
+	
+}
+
+function knifepointOut(event:MouseEvent):void{
+	if(knifeOn==false){
+		knife.width=350;
+		knife.height=350;
+	}
+	
+}
+///////////////////////////////////////////////////////////////////////////////
+var caneOn:Boolean= false;
+var handOn:Boolean=false;
+caneText.visible=false;
+
+
+cane.addEventListener(MouseEvent.CLICK,canepointClick);
+cane.addEventListener(MouseEvent.MOUSE_OVER,canepointOver);
+cane.addEventListener(MouseEvent.MOUSE_OUT,canepointOut);
+if(cane.x==479.90){
+	caneOn=false;
+}
+else if(cane.x==818.85){
+	caneOn=true;
+}
+
+if(caneOn==true){
+	caneText.visible=true;
+}
+
+handOn=caneOn||knifeOn;
+
+function canepointClick(event:MouseEvent):void{
+	
+	if((handOn==false)&&(caneOn==false)){
+		cane.x=818.85;
+		cane.y=666.45;
+		cane.width=200.00;
+		cane.height=200.00;
+		manyStars.play();
+		caneText.visible=true;
+		caneOn=true;
+		putSound.play();
+	}
+	else{
+		cane.x=479.90;
+		cane.y=787.65;
+		cane.width=240;
+		cane.height=240;
+		caneText.visible=false;
+		caneOn=false;
+		dropSound.play();
+	}
+}
+
+function canepointOver(event:MouseEvent):void{
+	if(caneOn==false){
+		cane.width=300;
+		cane.height=300;
+		overSound.play();
+	}
+	
+}
+
+function canepointOut(event:MouseEvent):void{
+	if(caneOn==false){
+		cane.width=240;
+		cane.height=240;
+	}
+	
+}
+///////////////////////////////////////////////////////////////////////
+var buckethatOn:Boolean= false;
+buckethatText.visible=false;
+
+buckethat.addEventListener(MouseEvent.CLICK,buckethatpointClick);
+buckethat.addEventListener(MouseEvent.MOUSE_OVER,buckethatpointOver);
+buckethat.addEventListener(MouseEvent.MOUSE_OUT,buckethatpointOut);
+if(buckethat.x==384.10){
+	buckethatOn=false;
+}
+else if(buckethat.x==689.15){
+	buckethatOn=true;
+}
+
+if(buckethatOn==true){
+	buckethatText.visible=true;
+}
+
+hatOn=piratehatOn||knithatOn||helmetOn||buckethatOn;
+
+function buckethatpointClick(event:MouseEvent):void{
+	
+	if((hatOn==false)&&(buckethatOn==false)){
+		buckethat.width=500;
+		buckethat.height=500;
+		buckethat.x=689.15;
+		buckethat.y=418.85;
+		manyStars.play();
+		buckethatText.visible=true;
+		buckethatOn=true;
+		putSound.play();
+	}
+	else{
+		buckethat.x=384.10;
+		buckethat.y=641.00;
+		buckethat.width=250;
+		buckethat.height=250;
+		buckethatText.visible=false;
+		buckethatOn=false;
+		dropSound.play();
+	}
+}
+
+function buckethatpointOver(event:MouseEvent):void{
+	if(buckethatOn==false){
+		buckethat.width=300;
+		buckethat.height=300;
+		overSound.play();
+	}
+	
+}
+
+function buckethatpointOut(event:MouseEvent):void{
+	if(buckethatOn==false){
+		buckethat.width=250;
+		buckethat.height=250;
+	}
+	
+}
+////////////////////////////////////////////////////////////////////////////////////
+btn.addEventListener(MouseEvent.CLICK,btnClick);
+btn.addEventListener(MouseEvent.MOUSE_OVER,btnpointOver);
+btn.addEventListener(MouseEvent.MOUSE_OUT,btnpointOut);
+btnText.visible=true;
+
+function btnClick(event:MouseEvent):void{
+		dropSound.play();
+		knife.x=257.30;
+		knife.y=744.05;
+		knife.width=350;
+		knife.height=350;
+		knifeText.visible=false;
+		knifeOn=false;
+	
+		cane.x=479.90;
+		cane.y=787.65;
+		cane.width=240;
+		cane.height=240;
+		caneText.visible=false;
+		caneOn=false;
+	
+		buckethat.x=384.10;
+		buckethat.y=641.00;
+		buckethat.width=250;
+		buckethat.height=250;
+		buckethatText.visible=false;
+		buckethatOn=false;
+		
+		helmet.x=186.85;
+		helmet.y=691.00;
+		helmet.width=250;
+		helmet.height=250;
+		helmetText.visible=false;
+		helmetOn=false;
+		
+		knithat.x=11.85;
+		knithat.y=382.85;
+		knithat.width=300;
+		knithat.height=300;
+		knithatText.visible=false;
+		knithatOn=false;
+		
+		piratehat.x=239.30;
+		piratehat.y=382.85;
+		piratehat.width=350;
+		piratehat.height=350;
+		piratehatText.visible=false;
+		piratehatOn=false;
+		
+		ninja.x=156.20;
+		ninja.y=228.95;
+		ninja.width=300;
+		ninja.height=300;
+		ninjaText.visible=false;
+		ninjaOn=false;
+		
+		coat.x=260.60;
+		coat.y=-29.50;
+		coat.width=331.95;
+		coat.height=331.95;
+		coatText.visible=false;
+		coatOn=false;
+		
+		uniform.x=-42.70;
+		uniform.y=18.45;
+		uniform.width=300;
+		uniform.height=300;
+		uniformText.visible=false;
+		uniformOn=false;
+		
+}
+
+function btnpointOver(event:MouseEvent):void{
+	btn.height=80;
+	btn.width=80;
+	btnText.visible=true;
+	overSound.play();
+}
+
+function btnpointOut(event:MouseEvent):void{
+	btn.height=70;
+	btn.width=70;
+	btnText.visible=true;
+}
+//////////////////////////////////////////////////////////////////////////////////////
+
+
+import flash.events.MouseEvent;
+back_btn.addEventListener(MouseEvent.CLICK,back3);
+back_btn.addEventListener(MouseEvent.MOUSE_OVER,backBig3,false,0,true);
+back_btn.addEventListener(MouseEvent.MOUSE_OUT,backSmall3,false,0,true);
+
+home_btn.addEventListener(MouseEvent.CLICK,home3);
+home_btn.addEventListener(MouseEvent.MOUSE_OVER,homeBig3,false,0,true);
+home_btn.addEventListener(MouseEvent.MOUSE_OUT,homeSmall3,false,0,true);
+
+/*var music3:Sound = new Sound (new URLRequest("changebgm.mp3"));
+var sc3:SoundChannel = music3.play();
+var arePlaying3:Boolean = true;*/
+
+sound_btn.addEventListener(MouseEvent.CLICK, stopBgm3);
+sound_no_btn.addEventListener(MouseEvent.CLICK, playBgm3);
+/*sound_btn.visible=true;
+sound_no_btn.visible=false;*/
+
+function home3(event:MouseEvent):void{
+
+	MovieClip(this.root).gotoAndPlay(1, "场景 1");
+	sc3.stop();
+}
+
+function homeBig3(event:MouseEvent):void{
+	home_btn.height=150;
+	home_btn.width=150;
+}
+
+function homeSmall3(event:MouseEvent):void{
+	home_btn.height=100;
+	home_btn.width=100;
+}
+
+function back3(event:MouseEvent):void{
+	
+	MovieClip(this.root).gotoAndPlay(1, "场景 4");
+	sc3.stop();
+}
+
+function backBig3(event:MouseEvent):void{
+	back_btn.height=150;
+	back_btn.width=150;
+}
+
+function backSmall3(event:MouseEvent):void{
+	back_btn.height=100;
+	back_btn.width=100;
+}
+
+function stopBgm3(e:MouseEvent):void{
+	if(areBgmPlaying3==true){
+		sc3.stop();
+		sound_btn.visible=false;
+		sound_no_btn.visible=true;
+		areBgmPlaying3 = false;
+		
+		}
+	else{
+	sc3.stop();
+	areBgmPlaying = false;
+		}
+	}
+
+function playBgm3(e:MouseEvent):void{
+	if(areBgmPlaying3==false){
+		sc3 = music3.play();
+		sound_btn.visible=true;
+		sound_no_btn.visible=false;
+		areBgmPlaying3 = true;
+		}
+	else{
+	sc3 = music3.play();
+		sound_btn.visible=true;
+		sound_no_btn.visible=false;
+		areBgmPlaying3 = true;
+		}
+	}
+  //////////////////////////////////////////////////////////////////////
+  
