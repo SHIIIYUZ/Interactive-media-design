@@ -1,0 +1,44 @@
+import flash.events.MouseEvent;
+import flash.utils.Timer;
+import flash.events.TimerEvent;
+
+var t2:Timer = new Timer(1000);
+
+exploreAnimation.stop();
+explore.visible=true;
+backdoo.visible=true;
+explTEXT.visible=false;
+
+t2.addEventListener(TimerEvent.TIMER,jump2);
+explore.addEventListener(MouseEvent.CLICK,explorePlay);
+explore.addEventListener(MouseEvent.MOUSE_OVER,exploreBig,false,0,true);
+explore.addEventListener(MouseEvent.MOUSE_OUT,exploreSmall,false,0,true);
+
+function explorePlay(event:MouseEvent):void{
+	exploreAnimation.play();
+	if(t2.running){
+		t2.stop();}
+	else{
+		t2.start();}
+	//arenaAnimation.removeEventListener(Event.ENTER_FRAME,everyframe);
+	explore.visible=false;
+	backdoo.visible=false;
+}
+
+function jump2(event:TimerEvent):void{
+	MovieClip(this.root).gotoAndPlay(1, "场景 4");
+	sc.stop();
+	t2.stop();
+	}
+
+function exploreBig(event:MouseEvent):void{
+	explore.height=240;
+	explore.width=600;
+	explTEXT.visible=true;
+}
+
+function exploreSmall(event:MouseEvent):void{
+	explore.height=200;
+	explore.width=500;
+	explTEXT.visible=false;
+}
