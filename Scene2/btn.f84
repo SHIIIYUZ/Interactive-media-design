@@ -1,0 +1,56 @@
+gou1.visible=false;
+cha1B.visible=false;
+cha1C.visible=false;
+cha1D.visible=false;
+WText2.visible=false;
+RText1.visible=false;
+var On2:Boolean= false;
+stop();
+
+btn2A.addEventListener(MouseEvent.CLICK,btn2AClick);
+btn2B.addEventListener(MouseEvent.CLICK,btn2BClick);
+btn2C.addEventListener(MouseEvent.CLICK,btn2CClick);
+btn2D.addEventListener(MouseEvent.CLICK,btn2DClick);
+jiantou.addEventListener(MouseEvent.CLICK,jiantou2Click);
+
+function btn2AClick(event:MouseEvent):void{
+	if(On2==false){
+	gou1.visible=true;
+	RText1.visible=true;
+	m++;
+	On2=true;
+	}
+}
+
+function btn2BClick(event:MouseEvent):void{
+	if(On2==false){
+	gou1.visible=true;
+	WText2.visible=true;
+	On2=true;
+	cha1B.visible=true;
+	}
+}
+
+function btn2CClick(event:MouseEvent):void{
+
+	if(On2==false){
+	gou1.visible=true;
+	WText2.visible=true;
+	On2=true;
+	cha1C.visible=true;
+	}
+}
+
+function btn2DClick(event:MouseEvent):void{
+	if(On2==false){
+	gou1.visible=true;
+	WText2.visible=true;
+	On2=true;
+	cha1D.visible=true;
+	}
+}
+
+function jiantou2Click(event:MouseEvent):void{
+	if(On2==true)
+	play();
+}
