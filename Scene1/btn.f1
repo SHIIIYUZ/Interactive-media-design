@@ -1,0 +1,70 @@
+import flash.media.Sound;
+import flash.net.URLRequest;
+import flash.media.SoundChannel;
+import fl.motion.MotionEvent;
+import flash.events.MouseEvent;
+
+
+sound_btn.visible=true;
+sound_no_btn.visible=false;
+
+var music:Sound = new Sound (new URLRequest("mainbgm.mp3"));
+var sc:SoundChannel = music.play();
+var arePlaying:Boolean = true;
+
+sound_btn.addEventListener(MouseEvent.CLICK, stopMusic);
+sound_no_btn.addEventListener(MouseEvent.CLICK, playMusic);
+sound_btn.addEventListener(MouseEvent.MOUSE_OVER,sdBig,false,0,true);
+sound_btn.addEventListener(MouseEvent.MOUSE_OUT,sdSmall,false,0,true);
+sound_no_btn.addEventListener(MouseEvent.MOUSE_OVER,sdnBig,false,0,true);
+sound_no_btn.addEventListener(MouseEvent.MOUSE_OUT,sdnSmall,false,0,true);
+
+function stopMusic(e:MouseEvent):void{
+	if(arePlaying==true){
+		sc.stop();
+		sound_btn.visible=false;
+		sound_no_btn.visible=true;
+		arePlaying = false;
+		}
+	else{
+	sc.stop();
+	arePlaying = false;
+		}
+	}
+
+function playMusic(e:MouseEvent):void{
+	if(arePlaying==false){
+		sc = music.play();
+		sound_btn.visible=true;
+		sound_no_btn.visible=false;
+		arePlaying = true;
+		}
+	else{
+	sc.stop();
+	arePlaying =true;
+		}
+	}
+	
+function sdBig(event:MouseEvent):void{
+	if(sound_btn.visible==true&&sound_no_btn.visible==false){
+		sound_btn.height=150;
+		sound_btn.width=150;}
+}
+
+function sdSmall(event:MouseEvent):void{
+	if(sound_btn.visible==true&&sound_no_btn.visible==false){
+		sound_btn.height=100;
+		sound_btn.width=100;}
+}
+
+function sdnBig(event:MouseEvent):void{
+	if(sound_btn.visible==false&&sound_no_btn.visible==true){
+		sound_no_btn.height=150;
+		sound_no_btn.width=150;}
+}
+
+function sdnSmall(event:MouseEvent):void{
+	if(sound_btn.visible==false&&sound_no_btn.visible==true){
+		sound_no_btn.height=100;
+		sound_no_btn.width=100;}
+}
