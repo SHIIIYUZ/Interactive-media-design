@@ -1,0 +1,44 @@
+import flash.events.MouseEvent;
+import flash.utils.Timer;
+import flash.events.TimerEvent;
+
+var t1:Timer = new Timer(1000);
+
+introAnimation.stop();
+intro.visible=true;
+backdoo.visible=true;
+intrTEXT.visible=false;
+
+t1.addEventListener(TimerEvent.TIMER,jump1);
+intro.addEventListener(MouseEvent.CLICK,introPlay);
+intro.addEventListener(MouseEvent.MOUSE_OVER,introBig,false,0,true);
+intro.addEventListener(MouseEvent.MOUSE_OUT,introSmall,false,0,true);
+
+function introPlay(event:MouseEvent):void{
+	introAnimation.play();
+	if(t1.running){
+		t1.stop();}
+	else{
+		t1.start();}
+	//arenaAnimation.removeEventListener(Event.ENTER_FRAME,everyframe);
+	intro.visible=false;
+	backdoo.visible=false;
+}
+
+function jump1(event:TimerEvent):void{
+	MovieClip(this.root).gotoAndPlay(1, "场景 2");
+	sc.stop();
+	t1.stop();
+	}
+
+function introBig(event:MouseEvent):void{
+	intro.height=240;
+	intro.width=600;
+	intrTEXT.visible=true;
+}
+
+function introSmall(event:MouseEvent):void{
+	intro.height=200;
+	intro.width=500;
+	intrTEXT.visible=false;
+}
