@@ -1,0 +1,58 @@
+import flash.events.MouseEvent;
+var areBgmPlaying5:Boolean = true;
+
+home_btn.addEventListener(MouseEvent.CLICK,home5);
+home_btn.addEventListener(MouseEvent.MOUSE_OVER,homeBig5,false,0,true);
+home_btn.addEventListener(MouseEvent.MOUSE_OUT,homeSmall5,false,0,true);
+
+var music5:Sound = new Sound (new URLRequest("testbgm.mp3"));
+var sc5:SoundChannel = music5.play();
+var arePlaying5:Boolean = true;
+
+sound_btn.addEventListener(MouseEvent.CLICK, stopBgm5);
+sound_no_btn.addEventListener(MouseEvent.CLICK, playBgm5);
+sound_btn.visible=true;
+sound_no_btn.visible=false;
+
+function home5(event:MouseEvent):void{
+	MovieClip(this.root).gotoAndPlay(1, "场景 1");
+	sc5.stop();
+}
+
+function homeBig5(event:MouseEvent):void{
+	home_btn.height=150;
+	home_btn.width=150;
+}
+
+function homeSmall5(event:MouseEvent):void{
+	home_btn.height=100;
+	home_btn.width=100;
+}
+
+
+function stopBgm5(e:MouseEvent):void{
+	if(areBgmPlaying5==true){
+		sc5.stop();
+		sound_btn.visible=false;
+		sound_no_btn.visible=true;
+		areBgmPlaying5 = false;
+		
+		}
+	else{
+	sc5.stop();
+	areBgmPlaying = false;
+		}
+	}
+
+function playBgm5(e:MouseEvent):void{
+	if(areBgmPlaying5==false){
+		sc5 = music5.play();
+		sound_btn.visible=true;
+		sound_no_btn.visible=false;
+		areBgmPlaying5 = true;
+		}
+	else{
+	sc5.stop();
+	areBgmPlaying5 =true;
+		}
+	}
