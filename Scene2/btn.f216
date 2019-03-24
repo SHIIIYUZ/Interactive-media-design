@@ -1,0 +1,56 @@
+gou4.visible=false;
+cha1A.visible=false;
+cha1C.visible=false;
+cha1D.visible=false;
+WText4.visible=false;
+RText4.visible=false;
+var On4:Boolean= false;
+stop();
+
+btn4A.addEventListener(MouseEvent.CLICK,btn4AClick);
+btn4B.addEventListener(MouseEvent.CLICK,btn4BClick);
+btn4C.addEventListener(MouseEvent.CLICK,btn4CClick);
+btn4D.addEventListener(MouseEvent.CLICK,btn4DClick);
+jiantou4.addEventListener(MouseEvent.CLICK,jiantou4Click);
+
+function btn4AClick(event:MouseEvent):void{
+	
+	if(On4==false){
+	gou4.visible=true;
+	WText4.visible=true;
+	On4=true;
+	cha1A.visible=true;
+	}
+}
+
+function btn4BClick(event:MouseEvent):void{
+	if(On4==false){
+	gou4.visible=true;
+	RText4.visible=true;
+	m++;
+	On4=true;
+	}
+}
+
+function btn4CClick(event:MouseEvent):void{
+	if(On4==false){
+	gou4.visible=true;
+	WText4.visible=true;
+	On4=true;
+	cha1C.visible=true;
+	}
+}
+
+function btn4DClick(event:MouseEvent):void{
+	if(On4==false){
+	gou4.visible=true;
+	WText4.visible=true;
+	On4=true;
+	cha1D.visible=true;
+	}
+}
+
+function jiantou4Click(event:MouseEvent):void{
+	if(On4==true)
+	play();
+}
