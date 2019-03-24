@@ -1,0 +1,47 @@
+import flash.events.MouseEvent;
+import flash.utils.Timer;
+import flash.events.TimerEvent;
+
+var t3:Timer = new Timer(1000);
+
+arenaAnimation.stop();
+arena.visible=true;
+backdoo.visible=true;
+arenTEXT.visible=false;
+
+
+t3.addEventListener(TimerEvent.TIMER,jump3);
+arena.addEventListener(MouseEvent.CLICK,arenaPlay);
+arena.addEventListener(MouseEvent.MOUSE_OVER,arenaBig,false,0,true);
+arena.addEventListener(MouseEvent.MOUSE_OUT,arenaSmall,false,0,true);
+
+function jump3(event:TimerEvent):void{
+	MovieClip(this.root).gotoAndPlay(1, "场景 5");
+	sc.stop();
+	t3.stop();
+	}
+
+
+function arenaPlay(event:MouseEvent):void{
+	if(t3.running){
+		t3.stop();}
+	else{
+		t3.start();}
+	arenaAnimation.play();
+	//arenaAnimation.removeEventListener(Event.ENTER_FRAME,everyframe);
+	arena.visible=false;
+	backdoo.visible=false;
+	
+}
+
+function arenaBig(event:MouseEvent):void{
+	arena.height=240;
+	arena.width=600;
+	arenTEXT.visible=true;
+}
+
+function arenaSmall(event:MouseEvent):void{
+	arena.height=200;
+	arena.width=500;
+	arenTEXT.visible=false;
+}
